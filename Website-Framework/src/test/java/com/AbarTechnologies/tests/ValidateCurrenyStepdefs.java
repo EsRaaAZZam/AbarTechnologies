@@ -1,7 +1,9 @@
 package com.AbarTechnologies.tests;
 
 import com.AbarTechnologies.pages.BasePage;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.testng.Assert;
 
 public class ValidateCurrenyStepdefs extends BaseTest {
 
@@ -38,7 +40,26 @@ public class ValidateCurrenyStepdefs extends BaseTest {
 
     @When("user click on country icon on sunscriber STC screen")
     public void userClickOnCountryIconOnSunscriberSTCScreen() {
-        browser.stcWeb.navHeader.clickOnBahrainCountry();
+        browser.stcWeb.navHeader.clickOnCountry();
 
     }
+
+
+
+
+
+
+    @Then("{string} with price {string} and {string} with price {string} and {string} with price {string}")
+    public void withPriceAndWithPriceAndWithPrice(    String litePackage, String clasicPackage, String premiumPackage, String litePrice, String classicPrice, String premiumPrice) {
+        Assert.assertTrue(browser.stcWeb.navHeader.getLitePackage().isDisplayed());
+        Assert.assertTrue(browser.stcWeb.navHeader.getClasicPackage().isDisplayed());
+        Assert.assertTrue(browser.stcWeb.navHeader.getPremiumPackahe().isDisplayed());
+
+        Assert.assertEquals(litePrice, browser.stcWeb.navHeader.getCurrencyLite().getText());
+        Assert.assertEquals(clasicPackage, browser.stcWeb.navHeader.getCurrencyClassic().getText()
+        );
+        Assert.assertEquals(premiumPrice, browser.stcWeb.navHeader.getCurrencyPremium().getText());
+    }
+
 }
+
