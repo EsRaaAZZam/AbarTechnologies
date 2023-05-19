@@ -1,0 +1,3 @@
+[submodule "Data-Preparation-Framework"]
+	path = Data-Preparation-Framework
+	url =  https://gitlab.com/ahmednagiub92/data-preparation-framework
